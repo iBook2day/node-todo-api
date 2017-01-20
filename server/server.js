@@ -9,6 +9,10 @@ const {
 
 //de - structuring
 var {
+    env
+} = require('./config/config.js');
+
+var {
     mongoose
 } = require('./db/mongoose.js');
 
@@ -23,7 +27,7 @@ var {
 
 var app = express();
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
 app.use(bodyParser.json());
 
@@ -149,7 +153,7 @@ app.patch('/todos/:id', (req, res) => {
 
 
 app.listen(port, () => {
-    console.log(`listen on port ${port}`)
+    console.log(`listen on port ${port} on ${env}`)
 });
 
 module.exports = {
