@@ -8,11 +8,11 @@ const bcrypt = require('bcryptjs');
 
 var password = '123abc!';
 
-bcrypt.genSalt(10, (err, salt) => {
-    bcrypt.hash(password, salt, (err, hash) => {
-        console.log(hash);
-    })
-})
+// bcrypt.genSalt(10, (err, salt) => {
+//     bcrypt.hash(password, salt, (err, hash) => {
+//         console.log(hash);
+//     })
+// })
 
 var hashpass = '$2a$10$btpdQpquhBv08gIl2OLshe5vCekGsm2sCBZgzUsFDm15l8.NHo1LW';
 bcrypt.compare(password, hashpass, (err, res) => {
