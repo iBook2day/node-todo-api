@@ -205,6 +205,7 @@ app.post('/users/login', (req, res) => {
             })
 
         }).catch((e) => {
+        console.log(e);
         res.status(400).send()
     })
 
@@ -223,11 +224,6 @@ app.post('/users/login', (req, res) => {
 app.listen(port, () => {
     console.log(`listen on port ${port} on ${env}`)
 });
-
-module.exports = {
-    app
-};
-
 
 module.exports = {
     app
